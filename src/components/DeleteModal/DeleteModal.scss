@@ -1,0 +1,47 @@
+.delete-modal {
+    width: 100%;
+    min-height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    &__modal {
+        width: 40%;
+        height: 40vw;
+
+        background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-text {
+            font-size: 3rem;
+            font-weight: 800;
+
+            margin-bottom: 4vw;
+        }
+
+        &-buttons {
+            display: flex;
+
+            &-button {
+                background-color: bisque;
+                padding: .5vw 1vw;
+
+                color: brown;
+                font-size: 1.5rem;
+                border: none;
+                margin-right: 1vw;
+            }
+        }
+    }
+}
