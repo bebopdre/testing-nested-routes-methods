@@ -1,9 +1,8 @@
 import './HomePage.scss';
 
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function HomePage() {
-    const navigate = useNavigate();
 
     const books = [
         {
@@ -32,10 +31,6 @@ function HomePage() {
         }
     ];
 
-    function handleBookClick(book) {
-        navigate('/first', { state: { book: book } });
-    }
-
     return (
         <main className="home">
             <h1 className="home__heading">
@@ -44,13 +39,13 @@ function HomePage() {
             <section className="home__books">
                 {
                     books.map(book => (
-                        <div onClick={() => handleBookClick(book)} className="home__books-book">
+                        <NavLink key={book.id} to={`/first/${book.id}`} className="home__books-book">
 
                             <p className='home__books-book-title'>
                                 {book.title}
                             </p>
 
-                        </div>
+                        </NavLink>
                     ))
                 }
             </section>

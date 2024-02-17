@@ -1,0 +1,33 @@
+.first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__heading {
+        font-size: 3rem;
+
+        margin: 2vw 0;
+    }
+
+    &__links {
+        display: flex;
+
+        &-link {
+            background-color: bisque;
+            border-radius: 40px;
+
+            padding: 1vw 2vw;
+            margin: 1vw 2vw;
+
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgb(114, 84, 84);
+            text-decoration: none;
+
+            &--active {
+                background-color: chocolate;
+                color: bisque
+            }
+        }
+    }
+}
