@@ -1,9 +1,10 @@
 import './FirstPage.scss';
 
+import bin from '../../assets/delete-green.png';
+
 import { NavLink, Outlet, useParams } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
 
 function FirstPage() {
 
@@ -26,9 +27,12 @@ function FirstPage() {
 
     return (
         <section className="first">
-            <h1 className='first__heading'>
-                {curBook.title}
-            </h1>
+            <div className='first__top'>
+                <h1 className='first__top-heading'>
+                    {curBook.title}
+                </h1>
+                <img src={bin} className='first__top-icon' alt='green garbage can'></img>
+            </div>
 
             <div className='first__links'>
                 <NavLink

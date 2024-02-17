@@ -1,5 +1,7 @@
 import './ThirdPage.scss';
 
+import bin from '../../assets/delete-green.png';
+
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import ThirdBookInfo from '../../components/ThirdBookInfo/ThirdBookInfo';
@@ -47,9 +49,12 @@ function ThirdPage() {
 
     return (
         <section className="third">
-            <h1 className="third__heading">
-                {curBook.title}
-            </h1>
+            <div className='third__top'>
+                <h1 className='third__top-heading'>
+                    {curBook.title}
+                </h1>
+                <img src={bin} className='third__top-icon' alt='green garbage can'></img>
+            </div>
 
             <div className="third__links">
                 <div

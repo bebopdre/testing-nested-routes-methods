@@ -1,5 +1,7 @@
 import './SecondPage.scss';
 
+import bin from '../../assets/delete-green.png';
+
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 function SecondPage() {
@@ -9,9 +11,12 @@ function SecondPage() {
 
     return (
         <section className="second">
-            <h1 className="second__heading">
-                {curBook.title}
-            </h1>
+            <div className='second__top'>
+                <h1 className='second__top-heading'>
+                    {curBook.title}
+                </h1>
+                <img src={bin} className='second__top-icon' alt='green garbage can'></img>
+            </div>
 
             <div className="second__links">
                 <NavLink
