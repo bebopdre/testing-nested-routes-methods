@@ -4,6 +4,7 @@ import FirstPage from "./pages/FirstPage/FirstPage";
 import SecondPage from "./pages/SecondPage/SecondPage";
 import ThirdPage from "./pages/ThirdPage/ThirdPage";
 import NavBar from "./components/NavBar/NavBar";
+import './App.scss';
 
 function App() {
   return (
