@@ -58,7 +58,7 @@ function HomePage() {
                 <p>third</p>
                 {
                     books.map(book => (
-                        <NavLink key={book.id} to={`/third`} state={{ book: book }} className="home__books-book">
+                        <NavLink key={book.id} to={`/third/${book.id}`} state={{ book: book }} className="home__books-book">
 
                             <p className='home__books-book-title'>
                                 {book.title}

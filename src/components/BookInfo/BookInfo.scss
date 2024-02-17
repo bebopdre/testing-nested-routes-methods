@@ -1,0 +1,67 @@
+.book-info {
+    margin: 2vw 0;
+
+    background-color: rgb(245, 233, 219);
+    border-radius: 20px;
+
+    padding: 2vw 0;
+
+    &__field {
+        display: flex;
+        justify-content: center;
+
+        &-heading {
+            width: 50%;
+
+            padding: 0 1vw;
+            margin-bottom: 2vw;
+
+            display: flex;
+            justify-content: flex-end;
+
+            &-text {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: rgb(174, 116, 116);
+            }
+        }
+
+        &-value {
+            width: 50%;
+
+            padding: 0 1vw;
+            margin-bottom: 2vw;
+
+            &-text {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: rgb(174, 116, 116);
+            }
+        }
+    }
+}
+
+.is-movie {
+    border-radius: 40px;
+    width: fit-content;
+    padding: .5vw 1vw;
+
+    &--yes {
+        background-color: rgba(53, 194, 53, 0.5);
+    }
+
+    &--no {
+        background-color: rgba(253, 51, 51, 0.5);
+    }
+
+    &__text {
+
+        &--yes {
+            color: green;
+        }
+
+        &--no {
+            color: red;
+        }
+    }
+}

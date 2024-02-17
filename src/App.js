@@ -22,7 +22,7 @@ function App() {
           <Route path='info' element={<BookInfo />} />
           <Route path='other' element={<Other />} />
         </Route>
-        <Route path='/third' element={<ThirdPage />} />
+        <Route path='/third/:bookID' element={<ThirdPage />} />
       </Routes>
     </BrowserRouter>
   );

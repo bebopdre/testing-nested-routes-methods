@@ -33,13 +33,14 @@ function FirstPage() {
             <div className='first__links'>
                 <NavLink
                     to='info'
-                    state={{ name: 'andrea' }}
+                    state={{ book: curBook }}
                     className={({ isActive }) => isActive ? 'first__links-link first__links-link--active' : 'first__links-link'}
                 >
                     Book Information
                 </NavLink>
                 <NavLink
                     to='other'
+                    state={{ book: curBook }}
                     className={({ isActive }) => isActive ? 'first__links-link first__links-link--active' : 'first__links-link'}
                 >
                     Edit Book Information

@@ -1,14 +1,29 @@
 import './ThirdPage.scss';
 
-import { Outlet, useLocation } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import ThirdBookInfo from '../../components/ThirdBookInfo/ThirdBookInfo';
 import ThirdOther from '../../components/ThirdOther/ThirdOther';
 
-function ThirdPage() {
-    const location = useLocation();
+import axios from 'axios';
 
-    const curBook = location.state.book;
+function ThirdPage() {
+    const { bookID } = useParams();
+
+    const [curBook, setCurBook] = useState({});
+
+    useEffect(() => {
+        const getBook = async () => {
+            try {
+                const response = await axios.get(`http://localhost:5050/books/${bookID}`);
+                setCurBook(response.data);
+            }
+            catch (err) {
+                console.log(`error getting specific book. this is the error: ${err}`);
+            }
+        }
+        getBook();
+    }, [bookID]);
 
     const [showBookInfo, setShowBookInfo] = useState(true);
     const [showOther, setShowOther] = useState(false);
