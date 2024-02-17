@@ -1,0 +1,36 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__heading {
+        margin: 3vw 0;
+
+        font-size: 6rem;
+        color: rgb(219, 193, 172);
+    }
+
+    &__books {
+        width: 70%;
+
+        margin-top: 4vw;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-book {
+            background-color: antiquewhite;
+            border-radius: 16px;
+
+            padding: 5vw 6vw;
+
+            &-title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: rgb(177, 91, 91);
+            }
+        }
+    }
+}

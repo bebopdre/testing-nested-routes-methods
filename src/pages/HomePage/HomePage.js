@@ -1,6 +1,10 @@
 import './HomePage.scss';
 
+import { useNavigate } from 'react-router-dom';
+
 function HomePage() {
+    const navigate = useNavigate();
+
     const books = [
         {
             id: 1,
@@ -28,51 +32,23 @@ function HomePage() {
         }
     ];
 
+    function handleBookClick(book) {
+        navigate('/first', { state: { book: book } });
+    }
+
     return (
         <main className="home">
             <h1 className="home__heading">
-                Pick a Book
+                PICK A BOOK
             </h1>
             <section className="home__books">
                 {
                     books.map(book => (
-                        <div className="home__books-book">
+                        <div onClick={() => handleBookClick(book)} className="home__books-book">
 
-                            <div className="home__books-book-field">
-                                <p className="home__books-book-field-lable">
-                                    title:
-                                </p>
-                                <p className="home__books-book-field-text">
-                                    {book.title}
-                                </p>
-                            </div>
-
-                            <div className="home__books-book-field">
-                                <p className="home__books-book-field-lable">
-                                    author:
-                                </p>
-                                <p className="home__books-book-field-text">
-                                    {book.author}
-                                </p>
-                            </div>
-
-                            <div className="home__books-book-field">
-                                <p className="home__books-book-field-lable">
-                                    description:
-                                </p>
-                                <p className="home__books-book-field-text">
-                                    {book.description}
-                                </p>
-                            </div>
-
-                            <div className="home__books-book-field">
-                                <p className="home__books-book-field-lable">
-                                    number of pages:
-                                </p>
-                                <p className="home__books-book-field-text">
-                                    {book.pageNum}
-                                </p>
-                            </div>
+                            <p className='home__books-book-title'>
+                                {book.title}
+                            </p>
 
                         </div>
                     ))
