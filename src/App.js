@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import FirstPage from "./pages/FirstPage/FirstPage";
 import SecondPage from "./pages/SecondPage/SecondPage";
@@ -14,13 +14,14 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/home' element={<HomePage />} />
         <Route path='/first/:bookID' element={<FirstPage />} >
           <Route path='info' element={<BookInfo />} />
           <Route path='other' element={<Other />} />
         </Route>
-        {/* <Route path='/first/:bookID/info' element={<BookInfo />} /> */}
-        <Route path='/second' element={<SecondPage />} />
+        <Route path='/second' element={<SecondPage />} >
+          <Route path='info' element={<BookInfo />} />
+          <Route path='other' element={<Other />} />
+        </Route>
         <Route path='/third' element={<ThirdPage />} />
       </Routes>
     </BrowserRouter>
