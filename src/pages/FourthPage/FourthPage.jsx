@@ -1,4 +1,4 @@
-import "./ThirdPage.scss";
+import "./FourthPage.scss";
 
 import bin from "../../assets/delete-green.png";
 
@@ -8,27 +8,17 @@ import ThirdBookInfo from "../../components/ThirdBookInfo/ThirdBookInfo";
 import ThirdOther from "../../components/ThirdOther/ThirdOther";
 
 import axios from "axios";
+import { useBook } from "../../contexts/bookContext";
 
-function ThirdPage() {
+function FourthPage() {
     const { bookID } = useParams();
 
-    const [curBook, setCurBook] = useState({});
+    const { curBook, setBookID } = useBook(); // Use the context to access curBook and setBookID
 
+    // Use effect to set the bookID in the context when the component mounts or bookID changes
     useEffect(() => {
-        const getBook = async () => {
-            try {
-                const response = await axios.get(
-                    `http://localhost:5050/books/${bookID}`
-                );
-                setCurBook(response.data);
-            } catch (err) {
-                console.log(
-                    `error getting specific book. this is the error: ${err}`
-                );
-            }
-        };
-        getBook();
-    }, [bookID]);
+        setBookID(bookID);
+    }, [bookID, setBookID]);
 
     const [showBookInfo, setShowBookInfo] = useState(true);
     const [showOther, setShowOther] = useState(false);
@@ -49,23 +39,23 @@ function ThirdPage() {
     }
 
     return (
-        <section className="third">
-            <div className="third__top">
-                <h1 className="third__top-heading">{curBook.title}</h1>
+        <section className="fourth">
+            <div className="fourth__top">
+                <h1 className="fourth__top-heading">{curBook.title}</h1>
                 <img
                     src={bin}
-                    className="third__top-icon"
+                    className="fourth__top-icon"
                     alt="green garbage can"
                 ></img>
             </div>
 
-            <div className="third__links">
+            <div className="fourth__links">
                 <div
                     onClick={() => handleTabClick("bookInfo")}
                     className={
                         showBookInfo
-                            ? "third__links-link third__links-link--active"
-                            : "third__links-link"
+                            ? "fourth__links-link fourth__links-link--active"
+                            : "fourth__links-link"
                     }
                 >
                     Book Information
@@ -74,8 +64,8 @@ function ThirdPage() {
                     onClick={() => handleTabClick("other")}
                     className={
                         showOther
-                            ? "third__links-link third__links-link--active"
-                            : "third__links-link"
+                            ? "fourth__links-link fourth__links-link--active"
+                            : "fourth__links-link"
                     }
                 >
                     Edit Book Information
@@ -87,4 +77,4 @@ function ThirdPage() {
     );
 }
 
-export default ThirdPage;
+export default FourthPage;
